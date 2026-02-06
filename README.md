@@ -1,7 +1,7 @@
 # sap-finance-automation
 ```
 
-The F28 Input Automation Excel sheet should look like this:
+The Excel sheet for the F28 Input Automation script should look like this:
 
 		 A  |  B  |  C  |             D              |             E              |       F       | ...
 ------+-----+-----+-----+----------------------------+----------------------------+---------------+----
