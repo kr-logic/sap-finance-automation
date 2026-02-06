@@ -56,8 +56,8 @@ Sub InputInvoicesToSelectionScreen()
 
 	Session.FindById("wnd[0]").SendVKey 0
 
-	Session.FindById("wnd[0]/tbar[1]/btn[16]").Press 'Feldolgozás
-	Session.FindById("wnd[0]/usr/tabsTS/tabpPART").Select 'Részletfizetés
+	Session.FindById("wnd[0]/tbar[1]/btn[16]").Press 'Payment processing
+	Session.FindById("wnd[0]/usr/tabsTS/tabpPART").Select 'Partial payment
 
 	'At this point, the current content of invoiceArray is not needed, so it can be deleted/overwritten. In order to optimize memory usage, I decided to overwrite the memory data.
 	'From E4 downwards put the payment amounts into the array
