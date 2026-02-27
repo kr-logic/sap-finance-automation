@@ -1,5 +1,5 @@
 ```
-SAP INVOICE PARTIAL PAYMENT AUTOMATION TOOL
+SAP INVOICE PARTIAL PAYMENT AUTOMATION SCRIPT
 =============================================
 
 This repository serves as a portfolio showcase demonstrating how VBA and SAP GUI Scripting can be used
