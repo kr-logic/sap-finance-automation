@@ -76,6 +76,5 @@ USAGE
 -------------
 AUTHOR: Princzinger Krisztián
 
-LICENSE: MIT
-
+Copyright (c) 2026 Princzinger Krisztián. All rights reserved.
 
