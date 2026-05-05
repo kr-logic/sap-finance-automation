@@ -30,7 +30,7 @@ Sub InputInvoicesToSelectionScreen()
 	'Variables for the logic
 	Dim itemCount As Integer 'The record limit for a document is around 990 in SAP, so Integer is enough.
 	Const MAX_SAP_ROWS As Integer = 990 'Customize this as needed if the limit is different
-	Dim inputLastRow As Integer
+	Dim inputLastRow As Long 'The max row count in Excel is 1 048 576, so it's advised to use Long here to avoid overflow errors.
 	Dim i As Integer
 	Dim uiRow As Integer
 	Dim scroll As Integer
@@ -64,7 +64,7 @@ Sub InputInvoicesToSelectionScreen()
 	Next i
 	
 	'Start filling the UI rows from the array
-	'SAP Limit: The selection screen typically fits 27 lines before needing a page down. Customize this as needed.
+	'SAP Limit: The selection screen typically fits 27 lines before pressing submit and getting new, empty input fields (Enter in this case). Customize this as needed.
 	uiRow = 0
 	For i = LBound(invoiceArray) To UBound(invoiceArray)
 		If (i Mod 27 = 0) And i > 0 Then
@@ -92,7 +92,8 @@ Sub InputInvoicesToSelectionScreen()
 	Next i
 
 	'Start filling the UI rows from the array
-	'SAP Limit: The payment screen typically fits 21 lines before needing a page down. Customize this as needed.
+	'SAP Limit: The payment screen typically fits 21 lines before needing to page down. Customize this as needed.
+	'Important note: Page down is not possible here and you have to use the VerticalScrollbar.Position propterty to move down on the list, as used in this code. 
 	uiRow = 0
 	scroll = 0
 	For i = LBound(invoiceArray) To UBound(invoiceArray)
@@ -108,9 +109,9 @@ Sub InputInvoicesToSelectionScreen()
 End Sub
 
 Sub ClearInputCells()
-	Dim lastRowD As Integer
-	Dim lastRowE As Integer
-	Dim lastRow As Integer
+	Dim lastRowD As Long
+	Dim lastRowE As Long
+	Dim lastRow As Long
 	Dim i As Integer
 	Dim ws As Worksheet
 	Set ws = ThisWorkbook.Sheets(1) 'Change this if the source is on another sheet
