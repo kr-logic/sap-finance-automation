@@ -93,7 +93,7 @@ Sub InputInvoicesToSelectionScreen()
 
 	'Start filling the UI rows from the array
 	'SAP Limit: The payment screen typically fits 21 lines before needing to page down. Customize this as needed.
-	'Important note: Page down is not possible here and you have to use the VerticalScrollbar.Position propterty to move down on the list, as used in this code. 
+	'Important note: Page down is not possible here and you have to use the VerticalScrollbar.Position property to move down on the list, as used in this code. 
 	uiRow = 0
 	scroll = 0
 	For i = LBound(invoiceArray) To UBound(invoiceArray)
